@@ -1,5 +1,5 @@
 {
-  "name": "rn-sms",
+  "name": "@imcsorin/rn-sms",
   "version": "0.1.0",
   "description": "SMS library for RN",
   "main": "lib/commonjs/index",

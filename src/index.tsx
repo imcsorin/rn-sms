@@ -17,6 +17,12 @@ const RnSms = NativeModules.RnSms
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return RnSms.multiply(a, b);
+export async function sendSMS(
+  addresses: string[],
+  message: string,
+  options?: {
+    attachments: { filename: string; mimeType: string; uri: string }[];
+  }
+): Promise<boolean> {
+  return await RnSms.sendSMS(addresses, message, options);
 }

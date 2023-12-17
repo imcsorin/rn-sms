@@ -1,18 +1,22 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'rn-sms';
+import { StyleSheet, View, Pressable, Text } from 'react-native';
+import { sendSMS } from 'rn-sms';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Pressable
+        onPress={async () => {
+          const rsp = await sendSMS(
+            ['3489345'],
+            'This is a te$st SM%S to make sure %27 everything works co!l)rrectly:.'
+          );
+          console.log('response', rsp);
+        }}
+      >
+        <Text style={styles.text}>Send sms</Text>
+      </Pressable>
     </View>
   );
 }
@@ -22,10 +26,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: 'black',
   },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+  text: {
+    color: 'white',
   },
 });

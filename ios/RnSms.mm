@@ -2,9 +2,12 @@
 
 @interface RCT_EXTERN_MODULE(RnSms, NSObject)
 
-RCT_EXTERN_METHOD(multiply:(float)a withB:(float)b
-                 withResolver:(RCTPromiseResolveBlock)resolve
-                 withRejecter:(RCTPromiseRejectBlock)reject)
+RCT_EXTERN_METHOD(sendSMS
+                  :(NSArray<NSString> *) addresses
+                  :(NSString *) message
+                  :(NSDictionary *) options
+                  :(RCTPromiseResolveBlock) resolve
+                  rejecter: (RCTPromiseRejectBlock) reject)
 
 + (BOOL)requiresMainQueueSetup
 {
