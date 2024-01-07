@@ -1111,7 +1111,7 @@ PODS:
     - React-jsi (= 0.73.0)
     - React-logger (= 0.73.0)
     - React-perflogger (= 0.73.0)
-  - rn-sms (0.1.0):
+  - rn-sms (0.2.1):
     - glog
     - RCT-Folly (= 2022.05.16.00)
     - React-Core
@@ -1371,7 +1371,7 @@ SPEC CHECKSUMS:
   React-runtimescheduler: 77543c74df984ce56c09d49d427149c53784aaf6
   React-utils: 42708ea436853045ef1eaff29996813d9fbbe209
   ReactCommon: 851280fb976399ca1aabc74cc2c3612069ea70a2
-  rn-sms: 7f9f8a7b8c8e22afc182f89fb45fce4de2fe0b27
+  rn-sms: 1581ebb323bb39e105d31752cfca671067c8cca1
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 44003f970aa541b79dfdd59cf236fda41bd5890f
 

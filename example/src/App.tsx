@@ -1,15 +1,15 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Pressable, Text } from 'react-native';
-import { sendSMS } from 'rn-sms';
+import { StyleSheet, Pressable, Text, Modal } from 'react-native';
+import { sendSMS } from '@imcsorin/rn-sms';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <Modal style={styles.container} visible transparent>
       <Pressable
         onPress={async () => {
           const rsp = await sendSMS(
-            ['3489345'],
+            ['+16288881096'],
             'This is a te$st SM%S to make sure %27 everything works co!l)rrectly:.'
           );
           console.log('response', rsp);
@@ -17,7 +17,7 @@ export default function App() {
       >
         <Text style={styles.text}>Send sms</Text>
       </Pressable>
-    </View>
+    </Modal>
   );
 }
 
@@ -27,8 +27,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'black',
+    width: '100%',
+    height: '100%',
   },
   text: {
     color: 'white',
+    marginTop: 200,
+    textAlign: 'center',
   },
 });

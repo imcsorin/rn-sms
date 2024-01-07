@@ -61,7 +61,10 @@ class RnSms: UIViewController, MFMessageComposeViewControllerDelegate {
                 }
             }
             
-            let rootViewController = UIApplication.shared.delegate?.window??.rootViewController
+            var rootViewController = UIApplication.shared.keyWindow?.rootViewController
+            while rootViewController?.presentedViewController != nil {
+                rootViewController = rootViewController?.presentedViewController
+            }
             rootViewController?.present(messageComposeViewController, animated: true, completion: nil)
             resolve(true)
         }
